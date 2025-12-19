@@ -1,49 +1,72 @@
+/* --- 0. VARIABLES CSS (Pour faciliter les changements de thème) --- */
+:root {
+    --primary-color: #007bff; /* Bleu vif pour les accents */
+    --secondary-color: #6c757d; /* Gris pour les textes secondaires */
+    --background-light: #f8f9fa; /* Arrière-plan très clair */
+    --background-dark: #343a40; /* Arrière-plan sombre pour le footer */
+    --text-color: #212529; /* Couleur principale du texte */
+    --card-background: #ffffff; /* Fond des cartes de projets */
+    --shadow-light: 0 4px 12px rgba(0, 0, 0, 0.08); /* Ombre légère */
+}
+
 /* --- 1. RESET ET BASE --- */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Très important pour la mise en page */
+    box-sizing: border-box;
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Police moderne */
     line-height: 1.6;
-    color: #333;
-    background-color: #f4f4f4;
-    scroll-behavior: smooth; /* Pour une navigation fluide entre les sections */
+    color: var(--text-color);
+    background-color: var(--background-light);
+    scroll-behavior: smooth;
 }
 
+/* Styles des liens */
 a {
     text-decoration: none;
-    color: #007bff;
+    color: var(--primary-color);
+    transition: color 0.3s ease;
 }
 
 a:hover {
-    color: #0056b3;
+    color: #0056b3; /* Un bleu légèrement plus foncé */
 }
 
 ul {
     list-style: none;
 }
 
-/* --- 2. MISE EN PAGE GÉNÉRALE --- */
+/* --- 2. MISE EN PAGE GÉNÉRALE ET TYPOGRAPHIE --- */
 .hero, .about, .projects, .contact {
-    padding: 60px 20px;
+    padding: 80px 20px; /* Plus d'espace vertical */
     max-width: 1200px;
     margin: auto;
 }
 
-h1, h2 {
-    margin-bottom: 20px;
+h1 {
+    font-size: 2.5em;
+    color: var(--text-color);
+    margin-bottom: 10px;
 }
 
-/* --- 3. STYLES DE L'EN-TÊTE ET DE LA NAVIGATION --- */
+h2 {
+    font-size: 2em;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 40px;
+    border-bottom: 2px solid var(--primary-color);
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* --- 3. EN-TÊTE ET NAVIGATION (Sticky) --- */
 header {
-    background: #fff;
-    color: #333;
-    padding: 15px 0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    position: sticky; /* Pour que la barre de navigation reste en haut */
+    background: var(--card-background);
+    box-shadow: var(--shadow-light);
+    position: sticky;
     top: 0;
     z-index: 1000;
 }
@@ -54,82 +77,164 @@ nav {
     align-items: center;
     max-width: 1200px;
     margin: auto;
-    padding: 0 20px;
+    padding: 15px 20px;
 }
 
 .logo {
-    font-size: 1.5em;
-    font-weight: bold;
+    font-size: 1.6em;
+    font-weight: 700;
+    color: var(--primary-color);
 }
 
 nav ul {
-    display: flex; /* Utilisation de Flexbox pour aligner les liens */
+    display: flex;
 }
 
 nav ul li {
-    margin-left: 20px;
+    margin-left: 30px;
 }
 
 nav ul li a {
-    color: #333;
-    padding: 5px 10px;
-    transition: color 0.3s;
+    color: var(--text-color);
+    font-weight: 500;
+    padding: 5px 0;
+    position: relative;
 }
 
-nav ul li a:hover {
-    color: #007bff;
+/* Effet de soulignement au survol */
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    display: block;
+    margin-top: 5px;
+    right: 0;
+    background: var(--primary-color);
+    transition: width 0.3s ease;
 }
 
-/* --- 4. STYLES DE LA SECTION ACCUEIL (HERO) --- */
+nav ul li a:hover::after {
+    width: 100%;
+    left: 0;
+    background: var(--primary-color);
+}
+
+/* --- 4. SECTION ACCUEIL (HERO) --- */
 .hero {
     text-align: center;
-    background: #e9ecef;
-    padding: 100px 20px;
+    background: linear-gradient(135deg, var(--background-light) 0%, #e0f7ff 100%); /* Léger dégradé */
+    padding: 150px 20px;
+}
+
+.hero p {
+    font-size: 1.2em;
+    color: var(--secondary-color);
+    margin-bottom: 30px;
 }
 
 .cta-button {
     display: inline-block;
-    background: #007bff;
+    background: var(--primary-color);
     color: white;
-    padding: 10px 20px;
-    margin-top: 20px;
-    border-radius: 5px;
-    transition: background 0.3s;
+    padding: 12px 25px;
+    border-radius: 50px; /* Bouton arrondi */
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .cta-button:hover {
     background: #0056b3;
+    transform: translateY(-2px); /* Petit effet de soulèvement */
 }
 
-/* --- 5. STYLES DE LA GRILLE DE PROJETS --- */
+/* --- 5. SECTION À PROPOS ET COMPÉTENCES --- */
+.about {
+    text-align: justify;
+}
+
+.about h3 {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.skills-list li {
+    background: var(--primary-color);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    font-weight: 500;
+}
+
+/* --- 6. SECTION PROJETS --- */
+.projects {
+    background-color: var(--background-light);
+}
+
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Grille flexible */
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
     margin-top: 30px;
 }
 
 .project-card {
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
+    background: var(--card-background);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: var(--shadow-light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 5px solid var(--primary-color); /* Bande de couleur */
 }
 
 .project-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* --- 6. STYLES DU PIED DE PAGE --- */
+.project-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.project-card a {
+    margin-right: 15px;
+    font-weight: 600;
+}
+
+/* --- 7. SECTION CONTACT --- */
+.contact {
+    text-align: center;
+}
+
+.contact p {
+    margin-bottom: 10px;
+}
+
+/* --- 8. PIED DE PAGE --- */
 footer {
     text-align: center;
-    padding: 20px;
-    background: #333;
+    padding: 30px 20px;
+    background: var(--background-dark);
     color: white;
-    margin-top: 40px;
+    margin-top: 60px;
 }
-/* --- 7. RESPONSIVE DESIGN (MEDIA QUERIES) --- */
+
+footer a {
+    color: #adb5bd; /* Couleur de lien plus claire dans le footer */
+}
+
+/* --- 9. RESPONSIVE DESIGN (Media Queries) --- */
 
 /* S'applique aux écrans de 768px de large ou moins (smartphones et petites tablettes) */
 @media (max-width: 768px) {
@@ -143,15 +248,24 @@ footer {
     nav ul {
         flex-direction: column;
         width: 100%;
-        margin-top: 10px;
+        margin-top: 15px;
     }
 
     nav ul li {
         margin: 5px 0;
     }
 
-    /* Les sections ont moins de padding sur mobile */
+    /* Ajustement des titres et du padding */
+    h1 {
+        font-size: 2em;
+    }
+
     .hero, .about, .projects, .contact {
-        padding: 40px 15px;
+        padding: 50px 15px;
+    }
+
+    .skills-list {
+        justify-content: center;
     }
 }
+
