@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ImmoJobs Bénin - Recrutement Immobilier</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">ImmoJobs Bénin</div>
+        <nav>
+            <a href="#">Accueil</a>
+            <a href="#">Déposer CV</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h1>Trouvez votre prochain défi dans l'immobilier au Bénin</h1>
+
+        <!-- Section de Recherche et Filtres -->
+        <section class="search-section">
+            <form id="filter-form">
+                <input type="text" id="keyword-input" placeholder="Mot-clé (Agent, Foncier, etc.)">
+                
+                <select id="location-select">
+                    <option value="">Toutes Localisations</option>
+                    <option value="Cotonou">Cotonou</option>
+                    <option value="Porto-Novo">Porto-Novo</option>
+                    <option value="Calavi">Abomey-Calavi</option>
+                </select>
+
+                <select id="contract-select">
+                    <option value="">Tous Contrats</option>
+                    <option value="CDI">CDI</option>
+                    <option value="CDD">CDD</option>
+                    <option value="Stage">Stage</option>
+                </select>
+
+                <button type="submit">Rechercher</button>
+            </form>
+        </section>
+
+        <!-- Liste des Offres d'Emploi -->
+        <section class="job-listings">
+            <h2>Offres d'Emploi Actuelles</h2>
+            <div id="job-list-container">
+                <!-- Les offres seront insérées ici par JavaScript -->
+            </div>
+            <p id="no-results" style="display: none;">Aucun résultat ne correspond à votre recherche.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 ImmoJobs Bénin. Conçu par Hamizath ALAOFE.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulateur de Location de Motos - Bénin</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Location de Motos au Bénin</h1>
+        <p class="subtitle">Simulez le coût de votre location (24h, 72h, Semaine)</p>
+
+        <form id="rental-form">
+            <!-- Sélection de la Moto -->
+            <div class="form-group">
+                <label for="moto-select">Choisir la Moto :</label>
+                <select id="moto-select" required>
+                    <!-- Les options seront remplies par JavaScript -->
+                </select>
+            </div>
+
+            <!-- Sélection de la Durée -->
+            <div class="form-group">
+                <label for="duration-input">Durée (en heures) :</label>
+                <input type="number" id="duration-input" min="1" value="24" required>
+            </div>
+
+            <button type="submit">Calculer le Prix</button>
+        </form>
+
+        <!-- Affichage du Résultat -->
+        <div id="result-box" class="result-box" style="display: none;">
+            <h2>Coût Estimé</h2>
+            <p id="selected-moto">Moto sélectionnée : </p>
+            <p id="selected-duration">Durée : </p>
+            <p id="best-price">Meilleur Prix : <span class="price-value"></span></p>
+            <p class="info-text">Le prix est calculé en fonction du tarif le plus avantageux (heure, jour ou semaine).</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
