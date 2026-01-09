@@ -11,9 +11,9 @@ export default function Commander() {
   });
 
   const shippingCosts: Record<string, number> = {
-    standard: 5.99,
-    express: 12.99,
-    overnight: 24.99,
+    standard: 2000,
+    express: 3000,
+    overnight: 5000,
   };
 
   const productPrices: Record<string, number> = {
@@ -113,20 +113,20 @@ export default function Commander() {
               onChange={handleChange}
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600"
             >
-              <option value="standard">Standard - 12000FCFA</option>
-              <option value="express">Express - 20000FCFA</option>
-              <option value="overnight">Overnight - 35000FCFA</option>
+              <option value="standard">Standard - 2000FCFA</option>
+              <option value="express">Express - 3000FCFA</option>
+              <option value="overnight">Overnight - 5000FCFA</option>
             </select>
           </div>
 
           <div className="bg-gray-100 p-4 rounded-lg mb-6">
             <div className="flex justify-between mb-2">
               <span>Sous-total:</span>
-              <span>{subtotal.toFixed(2)}€</span>
+              <span>{subtotal.toFixed(2)}fcfa</span>
             </div>
             <div className="flex justify-between mb-4">
               <span>Livraison:</span>
-              <span>{shipping.toFixed(2)}€</span>
+              <span>{shipping.toFixed(2)}fcfa</span>
             </div>
             <div className="border-t pt-4 flex justify-between font-bold text-lg">
               <span>Total:</span>

@@ -351,8 +351,8 @@ export default function Home() {
             </div>
             <div>
               <h4 className="text-white font-semibold mb-4">Contact</h4>
-              <p className="text-sm">Email: info@gommage-eclat.fr</p>
-              <p className="text-sm">Tél: +33 (0)1 23 45 67 89</p>
+              <p className="text-sm">Email: hamizathalaofe4@gmail.com</p>
+              <p className="text-sm">Tél: +229 0147351463/ 0165360002</p>
             </div>
           </div>
           <div className="border-t border-gray-800 pt-8 text-center text-sm">
