@@ -5,6 +5,7 @@ import path from "path";
 
 export default defineConfig({
   plugins: [tailwindcss(), react()],
+  base: "/mon-portfolio/site-gommage/",
   root: "client",
   server: {
     port: 5173,
