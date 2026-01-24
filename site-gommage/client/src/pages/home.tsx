@@ -42,7 +42,7 @@ export default function Home() {
       <section
         className="h-screen bg-cover bg-center relative flex items-center justify-center"
         style={{
-          backgroundImage: "url('/images/hero-background.jpg')",
+          backgroundImage: "url('./images/hero-background.jpg')",
           marginTop: "80px",
         }}
       >
@@ -215,7 +215,7 @@ export default function Home() {
             {/* Image */}
             <div className="relative">
               <img
-                src="/images/ingredients-natural.jpg"
+                src="./images/ingredients-natural.jpg"
                 alt="Ingrédients naturels"
                 className="w-full h-auto rounded-2xl shadow-2xl"
               />
@@ -232,7 +232,7 @@ export default function Home() {
             {/* Image */}
             <div className="relative order-2 md:order-1">
               <img
-                src="/images/product-gommage.jpg"
+                src="./images/product-gommage.jpg"
                 alt="Produit Gommage Premium"
                 className="w-full h-auto rounded-2xl shadow-2xl"
               />

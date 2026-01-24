@@ -12,8 +12,8 @@ export default defineConfig({
     open: true,
   },
   build: {
-    outDir: "../dist",
-    emptyOutDir: true,
+    outDir: "../dist/client",
+    emptyOutDir: true,  
   },
   resolve: {
     alias: {
@@ -21,3 +21,5 @@ export default defineConfig({
     },
   },
 });
+
+

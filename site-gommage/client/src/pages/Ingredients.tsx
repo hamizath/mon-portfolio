@@ -135,7 +135,7 @@ export default function Ingredients() {
       <section className="py-12 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <img
-            src="/images/ingredients-natural.jpg"
+            src="./images/ingredients-natural.jpg"
             alt="Ingrédients naturels du gommage"
             className="w-full h-auto rounded-2xl shadow-2xl"
           />
